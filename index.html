@@ -464,7 +464,7 @@ select.edit-field{cursor:pointer}
         <div class="step-text">Cole seu <strong>Client ID</strong> abaixo para ativar o login</div>
       </div>
       <input class="setup-input" id="clientIdInput" placeholder="xxxx.apps.googleusercontent.com"
-        value="" onchange="saveClientId()">
+        value="354615338457-f8vegugp2u7144v6sabr4l0rff8a57qe.apps.googleusercontent.com" onchange="saveClientId()">
       <button class="save-key-btn" onclick="saveClientId()">Salvar e recarregar</button>
     </div>
   </div>
@@ -868,7 +868,8 @@ const FILE_NAME='gastoai-backup.json';
 const DRIVE_API='https://www.googleapis.com/drive/v3';
 const UPLOAD_API='https://www.googleapis.com/upload/drive/v3';
 
-function getClientId(){return localStorage.getItem('gastoai_client_id')||''}
+const DEFAULT_CLIENT_ID='354615338457-f8vegugp2u7144v6sabr4l0rff8a57qe.apps.googleusercontent.com';
+function getClientId(){return localStorage.getItem('gastoai_client_id')||DEFAULT_CLIENT_ID}
 function saveClientId(){
   const v=document.getElementById('clientIdInput').value.trim();
   if(!v){showToast('Cole o Client ID primeiro.');return}
